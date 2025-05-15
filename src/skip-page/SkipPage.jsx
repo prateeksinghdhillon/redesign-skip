@@ -36,32 +36,23 @@ export default function SkipPage() {
           {/* duplicate your existing bottom-bar markup here */}
           <div className="skip-info">
             <span className="skip-title">
-              {
-                SKIP.find((s) => s.id === selectedSkipId)
-                  .size
-              }{" "}
-              Yard Skip
+              {SKIP.find((s) => s.id === selectedSkipId).size} Yard Skip
             </span>
             <span className="skip-price">
               £
               {(
-                SKIP.find((s) => s.id === selectedSkipId)
-                  .price_before_vat + 20
-              ).toFixed(2)}{" "} <span className="vat-note">+1.2% VAT included</span>
+                SKIP.find((s) => s.id === selectedSkipId).price_before_vat
+              )}
+              <span className="vat-note"> +  £{SKIP.find((s) => s.id === selectedSkipId).vat} VAT </span>
               <span className="skip-days">
-                {
-                  SKIP.find((s) => s.id === selectedSkipId)
-                    .hire_period_days
-                }{" "}
-                day hire
+                {SKIP.find((s) => s.id === selectedSkipId).hire_period_days} day
+                hire
               </span>
             </span>
           </div>
           <div className="skip-actions">
             <button className="skip-btn back-btn">Back</button>
-            <button className="skip-btn continue-btn">
-              Continue →
-            </button>
+            <button className="skip-btn continue-btn">Continue →</button>
           </div>
         </div>
       )}

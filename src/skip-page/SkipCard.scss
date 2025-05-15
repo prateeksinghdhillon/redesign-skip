@@ -64,7 +64,7 @@
     }
 
     .price-badge {
-      top: 222px;
+      top: 15px;
       right: 19px;
       background: #495360;
       color: white;
@@ -167,31 +167,31 @@
   }
 }
 
-@media (max-width: 768px) {
-  .skip-card {
-    .image-container {
-      .price-badge {
-        top: 166px;
-      }
-    }
-  }
-}
-@media (max-width: 492px) {
-  .skip-card {
-    .image-container {
-      .price-badge {
-        top: 205px;
-      }
-    }
-  }
-}
-@media (max-width: 456px) {
-  .skip-card {
+// @media (max-width: 768px) {
+//   .skip-card {
+//     .image-container {
+//       .price-badge {
+//         top: 166px;
+//       }
+//     }
+//   }
+// }
+// @media (max-width: 492px) {
+//   .skip-card {
+//     .image-container {
+//       .price-badge {
+//         top: 205px;
+//       }
+//     }
+//   }
+// }
+// @media (max-width: 456px) {
+//   .skip-card {
 
-    .image-container {
-      .price-badge {
-        top: 175px;
-      }
-    }
-  }
-}
+//     .image-container {
+//       .price-badge {
+//         top: 175px;
+//       }
+//     }
+//   }
+// }

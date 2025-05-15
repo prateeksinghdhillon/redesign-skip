@@ -5,7 +5,7 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
   return (
     <>
       
-      <div className="skip-card" onClick={() => onSelect(skip.id)}>
+      <div className="skip-card">
         <div className="image-container">
           <img
             src={`${skip.image}`}
@@ -36,6 +36,7 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
             </span>
           </div>
           <button
+          onClick={() => onSelect(skip.id)}
             className="book-btn"
             style={{
               backgroundColor: isSelected ? "royalblue" : "#444",
@@ -52,7 +53,7 @@ const SkipCard = ({ skip, isSelected, onSelect }) => {
           <div className="skip-info">
             <span className="skip-title">{skip.size} Yard Skip</span>
             <span className="skip-price">
-              £{(skip.price_before_vat * 1.2).toFixed(2)}{" "} 
+              £{skip.price_before_vat}
               <span className="skip-days">{skip.hire_period_days} day hire</span>
             </span>
           </div>

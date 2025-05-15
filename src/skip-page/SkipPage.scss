@@ -1,6 +1,5 @@
 /* src/skip-page/SkipPage.scss */
 .skip-page {
-  padding: 2rem;
   text-align: center;
 
   /* 1. Page heading + subheading */
@@ -120,7 +119,7 @@
 
       .skip-info {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 0.25rem;
       }
 
