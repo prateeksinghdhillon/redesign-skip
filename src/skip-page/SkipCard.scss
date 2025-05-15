@@ -1,0 +1,169 @@
+.skip-card {
+  background: #2e394c;
+  border-radius: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 400px;
+  height: 425px;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    max-width: 350px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    // Add this overlay gradient
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, #2e394c 100%);
+      pointer-events: none; // So it doesn't block clicks
+      z-index: 1;
+    }
+
+    .price-badge,
+    .bookmark-icon {
+      position: absolute;
+      z-index: 2; // Above the gradient
+    }
+
+    .price-badge {
+      top: 222px;
+      right: 19px;
+      background: #495360;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 22px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .bookmark-icon {
+      top: 12px;
+      left: 12px;
+      font-size: 1.2rem;
+      color: white;
+      opacity: 0.9;
+    }
+  }
+
+  .card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: linear-gradient(180deg, transparent 0, #0000001f 100%);
+    position: relative;
+
+    h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      position: absolute;
+      top: -32px;
+      z-index: 3;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #e4e4e4;
+      margin-bottom: 12px;
+      margin-top: 0;
+    }
+
+    .tags {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      justify-content: center;
+
+      .tag {
+        background: #495360;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #fff;
+      }
+    }
+
+    .book-btn {
+      width: 100%;
+      background: white;
+      color: #2e394c;
+      padding: 15px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #c7c7c7;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .card-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skip-card {
+    .card-content {
+      padding: 12px;
+    }
+
+    .book-btn {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .skip-card {
+
+    .image-container {
+      .price-badge {
+        top: 215px;
+      }
+    }
+  }
+}
+@media (max-width: 348px) {
+  .skip-card {
+
+    .image-container {
+      .price-badge {
+        top: 177px;
+      }
+    }
+  }
+}
