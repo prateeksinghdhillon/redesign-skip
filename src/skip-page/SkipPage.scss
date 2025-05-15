@@ -1,0 +1,136 @@
+/* src/skip-page/SkipPage.scss */
+.skip-page {
+  padding: 2rem;
+  text-align: center;
+
+  /* 1. Page heading + subheading */
+  .skip-header {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #ccc;
+      margin: 0.5rem 0 0;
+    }
+  }
+
+  /* 2. Cards grid: 3 columns on desktop, 2 on tablet, 1 on mobile */
+  .skip-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* 3. Bottom nav */
+  .skip-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+
+    .skip-info {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      .skip-title {
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      .skip-price {
+        color: royalblue;
+        font-weight: 700;
+        font-size: 1.1rem;
+
+        .vat-note {
+          font-size: 0.7rem;
+          font-weight: normal;
+          color: #e0e0e0;
+          margin-top: 2px;
+        }
+
+        .skip-days {
+          margin-left: 0.5rem;
+          font-weight: 400;
+          font-size: 0.9rem;
+          color: #bbb;
+        }
+      }
+    }
+
+    .skip-actions {
+      display: flex;
+      gap: 0.75rem;
+
+      .skip-btn {
+        background-color: royalblue;
+        border: none;
+        color: white;
+        font-weight: 600;
+        padding: 0.5rem 1.25rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.25s ease;
+
+        &.back-btn {
+          background-color: #333;
+        }
+
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+    }
+  }
+
+  /* Responsive grid breakpoints */
+  @media (max-width: 900px) {
+    .skip-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .skip-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Responsive bottom nav */
+  @media (max-width: 680px) {
+    .skip-bottom-bar {
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1rem;
+
+      .skip-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+
+      .skip-actions {
+        width: 100%;
+
+        .skip-btn {
+          width: 48%;
+        }
+      }
+    }
+  }
+}

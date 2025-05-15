@@ -1,5 +1,24 @@
+
+.skip-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;       // adjust as needed
+    margin: 0;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #ccc;        // a muted subheading color
+    margin: 0.5rem 0 0;
+  }
+}
+
 .skip-card {
-  background: #2e394c;
+  background: #0d1523;
   border-radius: 40px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -33,7 +52,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 0%, #2e394c 100%);
+      background: linear-gradient(180deg, transparent 0%, #0c1a31 100%);
       pointer-events: none; // So it doesn't block clicks
       z-index: 1;
     }
@@ -147,22 +166,31 @@
     }
   }
 }
-@media (max-width: 375px) {
-  .skip-card {
 
+@media (max-width: 768px) {
+  .skip-card {
     .image-container {
       .price-badge {
-        top: 215px;
+        top: 166px;
       }
     }
   }
 }
-@media (max-width: 348px) {
+@media (max-width: 492px) {
+  .skip-card {
+    .image-container {
+      .price-badge {
+        top: 205px;
+      }
+    }
+  }
+}
+@media (max-width: 456px) {
   .skip-card {
 
     .image-container {
       .price-badge {
-        top: 177px;
+        top: 175px;
       }
     }
   }

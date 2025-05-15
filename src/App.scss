@@ -6,22 +6,89 @@
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.skip-container{
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 60px;
-  column-gap: 20px;
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* ————————————
+   Global Stepper Styles
+   ———————————— */
+.stepper-container {
+  overflow-x: auto;
+  padding-bottom: 0;
+  margin-bottom: 0;
+
+  /* hide native scrollbar on WebKit */
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  .MuiStepper-root {
+    justify-content: center;
+    min-width: 600px;
+  }
+
+  /* force icon+label into a column */
+  .MuiStepLabel-root {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  /* default icon color */
+  .MuiStepIcon-root {
+    color: #555;
+  }
+  /* active and completed icons */
+  .MuiStepIcon-root.Mui-active,
+  .MuiStepIcon-root.Mui-completed {
+    color: #1976d2;
+  }
+
+  /* default label color */
+  .MuiStepLabel-label {
+    color: #555 !important;
+  }
+  /* active and completed labels */
+  .MuiStepLabel-root.Mui-active .MuiStepLabel-label,
+  .MuiStepLabel-root.Mui-completed .MuiStepLabel-label,
+  .MuiStep-root.Mui-active .MuiStepLabel-label,
+  .MuiStep-root.Mui-completed .MuiStepLabel-label {
+    color: #1976d2 !important;
+  }
+
+  /* extra specificity for current step */
+  .MuiStepLabel-root.Mui-active.MuiStepLabel-root .MuiStepLabel-label,
+  .MuiStepLabel-root.Mui-completed.MuiStepLabel-root .MuiStepLabel-label {
+    color: #1976d2 !important;
+  }
+
+  .MuiStepLabel-iconContainer svg {
+    font-size: 1.3rem;
+  }
+}
+
+/* — Responsive adjustments — */
+@media (max-width: 800px) {
+  .stepper-container .MuiStepper-root {
+    min-width: unset;
+  }
+  .stepper-container .MuiStepLabel-label {
+    font-size: 0.65rem !important;
+  }
+  .stepper-container .MuiStepLabel-iconContainer svg {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .stepper-container {
+    padding-bottom: 1rem;
+  }
+  /* collapse labels on very small screens */
+  .stepper-container .MuiStepLabel-label {
+    display: none;
   }
 }
